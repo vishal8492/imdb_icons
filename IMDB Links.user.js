@@ -1,5 +1,5 @@
 // ==UserScript==
-// @name           mikypilot IMDB Links
+// @name            IMDB Links
 // @description    Add some direct search links to subtitles, torrent and movie information pages from IMDb.
 // @version    
 // @author                   mikypilot,vishal mods
@@ -206,7 +206,6 @@ function addIconBarIcons(title, id, trackers) {
         tdimg = document.createElement("br");
         iconbar.appendChild(tdimg);
   for (var i = 0; i < trackers.length; i++) {
-    console.log("adding elements")
     tdimg = document.createElement("span");
     tdimg.innerHTML = trackers[i].getHTML(title, id);
     iconbar.appendChild(tdimg);
@@ -249,7 +248,6 @@ addIconBarIcons(title, id, trackers);
 {
     try
     {
-        console.log("here first")
         var tr = document.evaluate("//TR[TD/@class='lhscol'][1]/TD[last()]//TR[1]",
                 document, null, XPathResult.UNORDERED_NODE_SNAPSHOT_TYPE,
                 null).snapshotItem(0);
