@@ -1,26 +1,26 @@
 // ==UserScript==
 // @name            IMDB Links
 // @description    Add some direct search links to subtitles, torrent and movie information pages from IMDb.
-// @version    
+// @version
 // @author                   mikypilot,vishal mods
-// @updateURL      
-// @downloadURL    
-// @scriptsource   
+// @updateURL
+// @downloadURL
+// @scriptsource
 // @uso:script     []+/
 // @namespace      http://userscripts.org/users/29110
 // @homepage       http://userscripts.org/users/29110
 // @icon           http://www.gravatar.com/avatar/ba4d6f904251cb649572aab891fda0e7?r=PG&s=60&default=identicon
 // @screenshot     http://s3.amazonaws.com/uso_ss/11669/large.jpg
-// @include        http://*.imdb.com/title/*/
-// @include        http://*.imdb.com/title/*/#*
-// @include        http://*.imdb.com/title/*/combined*
-// @include        http://*.imdb.com/title/*/maindetails*
-// @include        http://*.imdb.com/title/*/?*
-// @include        http://imdb.com/title/*/
-// @include        http://imdb.com/title/*/#*
-// @include        http://imdb.com/title/*/combined*
-// @include        http://imdb.com/title/*/maindetails*
-// @include        http://imdb.com/title/*/?*
+// @include        https://*.imdb.com/title/*/
+// @include        https://*.imdb.com/title/*/#*
+// @include        https://*.imdb.com/title/*/combined*
+// @include        https://*.imdb.com/title/*/maindetails*
+// @include        https://*.imdb.com/title/*/?*
+// @include        https://imdb.com/title/*/
+// @include        https://imdb.com/title/*/#*
+// @include        https://imdb.com/title/*/combined*
+// @include        https://imdb.com/title/*/maindetails*
+// @include        https://imdb.com/title/*/?*
 // @grant          GM_log
 // @grant          GM_openInTab
 // @grant          GM_addStyle
@@ -33,7 +33,7 @@ var cleanTitle = new String(getCleanTitle());
 var imdbCode = new String(getImdbCode());
 
 //-----------------------------------
-//------------SUBTITLES-------------- 
+//------------SUBTITLES--------------
 //-----------------------------------
 
 
@@ -83,12 +83,12 @@ trackers.push(new SearchEngine("Info: AllMovie", "http://www.allmovie.com/search
 trackers.push(new SearchEngine("Info: Filmaffinity - Spanish", "http://www.filmaffinity.com/en/search.php?stext="+cleanTitle, false, "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABHNCSVQICAgIfAhkiAAAA2JJREFUOI11jX1M1HUcx1/f3+93j8hDCB1HSZxiGukhGRotHEJLM2E9WLSJc82a2R+uXK1Vf7Tyv/6o8I/mmm2Vc87Z5sqHplPHREXwgRPMU0+IhwMuHg449O7H3e/49Jcu3Xr99d577wclIjLBZd1FUHPSmOI/9MfJCQ4xLw3lvd2heiut3MWPl3xe7ydwL2MAPMLyNCwH4FiIpUrxVMKkLNB68lB3MLAqMZPUTdNE2eysWr85We+fd/9EhcbFlpV7fU0GweeSY23+j5uK/OOjsSdSlkXCtBBJYppJzFQKm8NJQVHJ2Jubt1Zt8hP85hy6Ubfhs92NL97c+NHaVocSIUfVcrZv4azbYaUN3dR0Da38aZ+qqVzGviMt3Or+O+/aEG/jh84wmh6biOws9emP1VbMYGr50n4zE4ceVQ2VHdpbK6+qjl6v2tLQIHU1FRTkZbH3aKtq7QhmX5h6vuzgO0wbuY7osT/Oev237lST5VZqSUFIDuxoUaP/uDjRVUgsnpL4TEr1DQyw0r9A6lYvlz37WsqvJ6gG0CIj80+5U2G2V7ehMUFHTxYYsxy4uJjGXWs5F9AYn4hyo2+Ew6fa1c4PXrUKF3i5fe7wegANQrdtqTvDd6YhMsXs2ZtOem5k8MLCMF9ubOOLDc3EpsKU+HzsOXSG/Jw5xs73X4FwyxuLdrFYl6aZ6Q+PzC3ff6lwaW/Um76bEL3Yc1deW93HM/lR+kbSaiy9Ql5/qYZnlxRjtxmqsqyE88Gw/eLAomGN7WLZrck2zClwCMxmSFu3RzGL2n1modr2/ctyucdQgDp9KaTqtzcxOj7J3q8bKXWeeNcAmG9Nd/5FwrTSSScut1wJP8pQj5t1y6J8mmsnZgqA3BiK03IyqDZ98i3VpXmMtV/wGQCBbVxz/DzTRSpeoWfnExr2EBj0sq6qV570xekfHOO7H35SV5vPQ6KL4/tPc9wciaFn/moohSEilvZj1m4tGavQdJ20cli/NM/jVuekYfV30TtwhR3HI9Ok44PZTu1Mpkr9GYZmsWITRCKii4h4s21b9NwFooprRXnKBFeRgGdUYTvqgq+AWgG7PAT31Ynf5rrd7t9tDtew22HfOwfeq/J5Vjxc+P8BEZF4f87WNdnFUxLTHgiBIRJ9wLvHv0ps5Pc+OKMpAAAAAElFTkSuQmCC"));
 
 
-// --------------- END OF SEARCH ENGINES ---------------  
+// --------------- END OF SEARCH ENGINES ---------------
 
 
 function xpath(query, context) {
 	context = context ? context : document;
-	
+
 	return document.evaluate(query, context, null,
 		XPathResult.UNORDERED_NODE_SNAPSHOT_TYPE, null);
 }
@@ -98,19 +98,19 @@ function SearchEngine(shortname, searchurl, usesIMDBID, icon) {
 	this.searchurl = searchurl;
 	this.usesIMDBID = usesIMDBID;
 	this.icon = icon;
-	
+
 	this.getHTML = function (title, id) {
 		var html = "<a href=\"" + this.getSearchUrl(title, id) + "\"><img class=\"img\" style=\"-moz-opacity: 0.4;\" border=\"0\" src=\"" + this.icon + "\" title=\"" + this.shortname + "\"><\/a>&nbsp;";
 		return html;
 	}
-	
+
 	this.getSearchUrl = function (title, id) {
 		var searchUrl = this.searchurl;
 		if (this.usesIMDBID) {
 
 
 			searchUrl = searchUrl.replace(/%imdb\-id/, id);
-			
+
 			var adres=window.location.href;
 			var ilk='imdb.com/title/';
 
@@ -126,9 +126,9 @@ function SearchEngine(shortname, searchurl, usesIMDBID, icon) {
 		else {
 			searchUrl = searchUrl.replace(/%title/, encodeURIComponent(title));
 		}
-		
+
 		return searchUrl;
-	}	
+	}
 }
 
 function openAllInTabs(title, id, inclIMDBID) {
@@ -184,7 +184,7 @@ function getId() {
 
 
 function addIconBarIcons(title, id, trackers) {
- var iconbar = xpath("//div[@id='titleAwardsRanks']", document); //xpath("//h1", document);
+ var iconbar = xpath("//div[@class='plot_summary_wrapper']", document); //xpath("//h1", document);
     console.log("found element"+iconbar)
     if (!iconbar || iconbar.snapshotLength != 1) {
     GM_log("Error! Couldn't find icon bar. Quitting!");
@@ -193,7 +193,7 @@ function addIconBarIcons(title, id, trackers) {
 
 	iconbar = iconbar.snapshotItem(0);
 	iconbar.id = "iconbar";
-	
+
    var tdimg;
         tdimg = document.createElement("br");
         iconbar.appendChild(tdimg);
@@ -203,7 +203,7 @@ function addIconBarIcons(title, id, trackers) {
     iconbar.appendChild(tdimg);
 	}
 
-	
+
 	if (GM_openInTab) {
 		var tdopenall = document.createElement("a");
 		var aopenall = document.createElement("a");
@@ -213,18 +213,18 @@ function addIconBarIcons(title, id, trackers) {
 		aopenall.setAttribute("class", "openall");
 		aopenall.addEventListener("click", function () { openAllInTabs(title, id, true); }, false);
 		tdopenall.appendChild(aopenall);
-		
+
 		iconbar.appendChild(tdopenall);
 	}
 }
 
 function addStyles() {
 	var open_all_class = "a.openall {\n" +
-	"	font-weight: bold;\n" + 
+	"	font-weight: bold;\n" +
 	"	font-family: Calibri, Verdana, Arial, Helvetica, sans-serif;\n" +
-	"	font-size: 10px\n" +
+	"	font-size: 14px\n" +
 	"}";
-	
+
 	GM_addStyle(open_all_class);
 }
 
