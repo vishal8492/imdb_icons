@@ -63,6 +63,9 @@ movie_title = movie_title.split(" ").join("+");
 //  |\\s*:\\s*|\\s*,\\s
 trackers.push(new SearchEngine("Info: Movielens", "https://movielens.org/explore?q="+movie_title, false, "http://www.google.com/s2/favicons?domain=www.movielens.org"));
 
+trackers.push(new SearchEngine("Info: Letterboxd", "https://letterboxd.com/search/films/"+movie_title, false, "http://www.google.com/s2/favicons?domain=letterboxd.com"));
+
+
 //TMDB via IMDb-ID
 trackers.push(new SearchEngine("Info: TMDB", "https://www.themoviedb.org/redirect?external_source=imdb_id&external_id="+imdbCode, false, "http://www.google.com/s2/favicons?domain=themoviedb.org"));
 
@@ -186,12 +189,12 @@ function getId() {
 function addIconBarIcons(title, id, trackers) {
  var iconbar = xpath("//div[@class='plot_summary_wrapper']", document); //xpath("//h1", document);
     console.log("found element"+iconbar)
-    if (!iconbar || iconbar.snapshotLength != 1) {
+    if (!iconbar) {
     GM_log("Error! Couldn't find icon bar. Quitting!");
     return;
   }
 
-	iconbar = iconbar.snapshotItem(0);
+	iconbar = iconbar.snapshotItem(iconbar.snapshotLength - 1);
 	iconbar.id = "iconbar";
 
    var tdimg;
