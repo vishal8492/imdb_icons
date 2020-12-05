@@ -40,10 +40,10 @@ var imdbCode = new String(getImdbCode());
 //KickAss
 var kat_title = new String(getTitle());
 kat_title = kat_title.replace(/ /g,"%20");
-trackers.push(new SearchEngine("Torrent: KickAss", "https://katcr.co/katsearch/page/1/"+kat_title+"", false, "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAAsSAAALEgHS3X78AAACj0lEQVQ4jW2RW0hUURiFvzlzHGccsdFBx7wg4QUVtAgzynqYHjKaXsRIMqEwekmQqKheujx2eTKiCKykl/BFkFLMKEOLEilKKtMyRwcveRnHy1ycfY7Tg55pvCzYsP+11r/+n71hFdXHS2wPbp+Yq6m212rcpZrSZ0/qTvkjuYtnDzbcuXZ0SKt12uXqece7fcVZJQBO14zXZIwy2BLjojR9fHIuaDIaZEucSQJ43t575d7jjlsyQFV5cUJB7ta9qqoAkJ6yxQyg1QBJVrMhkstIi68FVgJizYYzxmi9TlH+NwDsKDlJeuYePNNOulpvrtEyM6wplWVFCSsBMYZSdbVZkmTiE7ehqkFsaYUAjDk/oa4L1wHRBv1hGUCWdUlCEQDExiWw33F5jTm/qJz8onI+vr6Pa7A7zMuyLlcCCC2rkiIEihAE/Iv0vK1ncqwvbHT2d+GeGsI9OYTmU4RgeVmVZYBFX2BCKCIPQMxP0ff1JdbkHJJS8vAuTNPZdpfN4PMHv8kAc/P+TkUIe6RoirEAMDU+gCLEhuagUPH5llolgIXFwCOfL4AQInxkQwwASwEfQggs1ow1+uDwzERz+0+3DNDc3u9KtZkH8rOsOdqE2ekREpOzyCk4QEb2bkTQz9O6qvAGrlHPQwBJI0bGPJVefyAkFIFQBB/eNCCCfnQ6Cb/XQ0vjdTTtj8s92/ii74b2nWFUOLLrdxXaTmu1xZqGxZqKa/AzqrryDos+sdzT+9fe0uHs3BAAUHEkq2l7nrVM0m2QWPAK9cuP6WMtHcNNGqdfb/o+4G40GvQjJqP+kDFakkOhEKFQiF/Oud99g7M72zpd3ZH+jWMi4LCnX4iNkR1uT/Dcq/ejvZt5/gHI7C0FIQ1BBgAAAABJRU5ErkJggg=="));
-
+trackers.push(new SearchEngine("Torrent: Zooqle", "https://zooqle.com/search?q="+kat_title+"", false, "http://www.google.com/s2/favicons?domain=zooqle.com"));
 //Torrentz
-trackers.push(new SearchEngine("Torrent: Torrentz", "https://torrentz2.eu/search?f="+cleanTitle, false, "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQAQMAAAAlPW0iAAAABlBMVEUAAAA0ZpxMG+fNAAAAAXRSTlMAQObYZgAAACNJREFUCJljqP/H8P8/CDUfZGA+gA3dZ2A+xMB8hIH5BJANAL3/EC6qfK0AAAAAAElFTkSuQmCC"));
+trackers.push(new SearchEngine("Torrent: 1337x", "https://1337x.to/search/"+cleanTitle+"/1/", false, "http://www.google.com/s2/favicons?domain=1337x.to"));
+trackers.push(new SearchEngine("Torrent: rarbg", "https://rarbgprx.org/torrents.php?search="+cleanTitle, false, "http://www.google.com/s2/favicons?domain=rarbgprx.org"));
 
 //ThePirateBay
 trackers.push(new SearchEngine("Torrent: Thepiratebay (Video)", "https://thepiratebay.org/search/%title/0/7/200", false, "data:image/x-icon;base64,Qk04AwAAAAAAADYAAAAoAAAAEAAAABAAAAABABgAAAAAAAAAAADgTAAA4EwAAAAAAAAAAAAA/////////////////////////////////////////////////////v7+/////////////Pz8vb297Ozs////////////////////////////////4uLiSUlJ3d3d////////8/PzEhIScnJy8fHx////////////////////8fHxwsLCWFhYAAAAyMjI////////5+fnEBAQICAgQkJCV1dXZWVli4uLiYmJUlJSKioqPT09bm5uHh4eYWFhwcHBubm5bGxsQEBAp6end3d3FBQUAAAAFBQUOTk5ISEhGRkZPT09WVlZQkJCKioqJycnenp6AAAAQUFBPz8/YGBgjo6O0dHR+/v7////////7+/vxcXFnZ2dg4ODExMTQEBAv7+/AAAAgoKCjo6OpaWltra2qqqqpqampaWlpKSkra2tr6+vsbGx5eXll5eXW1tb1NTUcXFxmJiYAwMDAAAANzc3VFRUGxsbAAAAX19fPDw8ERERAAAAQUFB/v7+/Pz8////////nJycAAAAAAAAAAAAHx8fCwsLAAAAJiYmBQUFAAAAAAAAKysr+vr6////////////nJycAAAAAAAADw8PAAAAAAAAAAAAAAAADQ0NAwMDAAAANjY2+vr6////////////rq6uAAAANjY25eXlWVlZHx8fJycnIyMj0dHRhoaGAAAAV1dX////////////////r6+vAAAALS0t0tLSX19fsrKy2dnZZWVlsrKyiIiIAAAAWVlZ////////////////r6+vAAAAAAAABQUFAgICExMTEBAQAwMDAwMDAQEBAAAAWlpa////////////////q6urAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAVFRU////////////////19fXSUlJQUFBQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQkJCQkJCqKio/////////////////////////v7+/v7+/v7+/v7+/v7+/v7+/v7+/v7+/v7+////////////AAA="));
@@ -187,7 +187,7 @@ function getId() {
 
 
 function addIconBarIcons(title, id, trackers) {
- var iconbar = xpath("//div[@class='plot_summary_wrapper']", document); //xpath("//h1", document);
+ var iconbar = xpath("//div[@class='heroic-overview']", document); //xpath("//h1", document);
     console.log("found element"+iconbar)
     if (!iconbar) {
     GM_log("Error! Couldn't find icon bar. Quitting!");
